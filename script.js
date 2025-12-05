@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });function ajaxLogin(email, password, rememberMe = false) {
     return new Promise((resolve, reject) => {
-        fetch('login.php', {
+        fetch('Loogin.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -363,4 +363,5 @@ function saveCredentialsForAutoLogin(email, password) {
         localStorage.removeItem('auto_login_email');
         localStorage.removeItem('auto_login_password');
     }
+
 }
