@@ -1,6 +1,16 @@
 <?php
 require_once 'auth_check.php';
 requireFaculty();
+if (password_verify($password, $user['password'])) {
+    $_SESSION['user_id'] = $user['user_id'];
+    $_SESSION['username'] = $user['first_name'] . ' ' . $user['last_name'];
+    $_SESSION['email'] = $user['email'];
+    $_SESSION['role'] = $user['role'];
+    $_SESSION['logged_in'] = true;
+    $_SESSION['login_time'] = time();
+    error_log("Login successful for user: " . $user['email']);
+    error_log("Session ID: " . session_id());
+    error_log("Session variables set: " . print_r($_SESSION, true));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -564,3 +574,4 @@ requireFaculty();
     <script src="script.js"></script>
 </body>
 </html>
+
