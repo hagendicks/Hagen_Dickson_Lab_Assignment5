@@ -39,7 +39,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             <input type="date" id="dob">
             <button type="submit">Sign Up</button>
             <p class="switch-auth">
-                Already have an account? <a href="Loogin.php">Login here</a>
+                Already have an account? <a href="Loogin.php">Login here</a>  <!-- Link to Loogin.php -->
             </p>
         </form>
     </div>
