@@ -4,7 +4,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     header("Location: dashboard.php");
     exit;
 } else {
-    header("Location: login.php");
+    header("Location: Loogin.php");
     exit;
 }
+
 ?>
