@@ -91,7 +91,7 @@ function validateSignup(event) {
                 if (roleInput) roleInput.value = 'student';
                 if (dobInput) dobInput.value = '';
                 setTimeout(() => {
-                    window.location.href = 'login.php';
+                    window.location.href = 'Loogin.php';
                 }, 2000);
             } else {
                 showAlert('error', data.message || 'Registration failed');
@@ -199,13 +199,13 @@ function logout() {
                     sessionStorage.clear();
                     showAlert('success', 'Logged out successfully!');
                     setTimeout(() => {
-                        window.location.href = 'login.php';
+                        window.location.href = 'Loogin.php';
                     }, 1000);
                 }
             })
             .catch(error => {
                 console.error('Logout error:', error);
-                window.location.href = 'login.php';
+                window.location.href = 'Loogin.php';
             });
     }
 }
@@ -222,7 +222,7 @@ function protectPage() {
                 if (!data.logged_in) {
                     showAlert('warning', 'Please login to access this page');
                     setTimeout(() => {
-                        window.location.href = 'login.php';
+                        window.location.href = 'Loogin.php';
                     }, 1000);
                 } else {
                     const userDisplay = document.getElementById('userDisplay');
@@ -365,3 +365,4 @@ function saveCredentialsForAutoLogin(email, password) {
     }
 
 }
+
