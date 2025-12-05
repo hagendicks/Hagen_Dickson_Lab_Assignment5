@@ -78,5 +78,14 @@ if (!function_exists('redirectBasedOnRole')) {
         }
     }
 }
+    error_log("Session check - logged_in: " . (isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : 'not set'));
+error_log("Session check - user_id: " . (isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 'not set'));
+
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'message' => 'Please login to access this page']);
+    exit;
+}
 ?>
+
 
